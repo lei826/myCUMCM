@@ -200,11 +200,18 @@
   set document(title: title)
 
   //设置标题
-  set heading(numbering: "1.1 ")
+  set heading(numbering: (..numbers) => {
+    let nums = numbers.pos()
+    if nums.len() == 1 {
+      numbering("一、", ..nums)
+    } else {
+      numbering("1.1 ", ..nums)
+    }
+  })
 
   show heading: it => box(width: 100%)[
     #set text(font: (text-font, heiti))
-    #if it.numbering != none { counter(heading).display() }
+    #if it.numbering != none { counter(heading).display(it.numbering) }
     #it.body
     #v(8pt)
   ]
@@ -214,7 +221,6 @@
   ): it => box(width: 100%)[
     #set text(size: 15pt)
     #set align(center)
-    #set heading(numbering: "一、")
     #v(4pt)
     #it
   ]
