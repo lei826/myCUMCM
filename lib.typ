@@ -302,7 +302,7 @@
   if keywords != () [
     #v(5pt)
     #h(-2em)#text("关键字：", font: heiti)
-    #keywords.join(h(1em))
+    #strong(keywords.join(h(1em)))
   ]
 
   pagebreak()
