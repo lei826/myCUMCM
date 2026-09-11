@@ -64,7 +64,7 @@
     stroke: none,
     table.hline(stroke: 1.2pt),
     table.header(
-      [*符号*], [*含义*], [*单位*],
+      [符号], [含义], [单位],
     ),
     table.hline(stroke: 0.6pt),
     [$t$], [时段索引，$t = 1, 2, ..., 144$], [—],

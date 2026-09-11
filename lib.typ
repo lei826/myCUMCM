@@ -270,6 +270,9 @@
   set enum(tight: false, indent: 1em)
   show enum: set text(top-edge: "ascender")
 
+  // 表格表头默认加粗
+  show table.header: it => strong(it)
+
   // 封面显示
   if cover-display == true [
     #show: cover.with(
