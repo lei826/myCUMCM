@@ -1,5 +1,7 @@
 #import "@preview/ctheorems:1.1.3": *
 
+#let tab = h(2em)
+
 // 文本和代码的字体
 #let songti = "SimSun"
 #let heiti = "SimHei"
