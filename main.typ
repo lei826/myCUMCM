@@ -56,6 +56,44 @@
 
 = 符号说明
 
+#figure(
+  table(
+    columns: (1.1fr, 3fr, 0.9fr),
+    align: (center + horizon, left + horizon, center + horizon),
+    inset: (x: 8pt, y: 6pt),
+    stroke: none,
+    table.hline(stroke: 1.2pt),
+    table.header(
+      [*符号*], [*含义*], [*单位*],
+    ),
+    table.hline(stroke: 0.6pt),
+    [$t$], [时段索引，$t = 1, 2, ..., 144$], [—],
+    [$Delta t$], [单个时段的长度，$Delta t = 1 / 6$], [h],
+    [$p_t$], [时段电价], [元/kWh],
+    [$L_t$], [第 $t$ 个时段的平均负载功率], [kW],
+    [$hat(P)_t^("PV")$], [第 $t$ 个时段的光伏预测功率], [kW],
+    [$ell_t$], [第 $t$ 个时段的负载电量], [kWh],
+    [$v_t$], [第 $t$ 个时段的光伏预测电量], [kWh],
+    [$g_t$], [计划购电量], [kWh],
+    [$a_t$], [从微网送入储能设备的充电电量], [kWh],
+    [$b_t$], [储能设备向微网输出的放电电量], [kWh],
+    [$s_t$], [未利用的光伏电量], [kWh],
+    [$E_t$], [第 $t$ 个时段结束时的内部储电量], [kWh],
+    table.hline(stroke: 1.2pt),
+  ),
+  caption: [主要符号及其含义],
+)
+
+负载功率与光伏预测功率按时段长度换算为电量，即
+
+$
+  ell_t = L_t Delta t,
+  quad
+  v_t = hat(P)_t^("PV") Delta t,
+  quad
+  t = 1, 2, ..., 144.
+$
+
 = 数据预处理
 
 = 模型的建立与求解
