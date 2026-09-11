@@ -270,7 +270,6 @@
   set enum(tight: false, indent: 1em)
   show enum: set text(top-edge: "ascender")
 
-
   // 封面显示
   if cover-display == true [
     #show: cover.with(
