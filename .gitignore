@@ -1,3 +1,5 @@
 *.pdf
 /problem C/
 /README.md
+/tmp/
+!/figures/*.pdf
