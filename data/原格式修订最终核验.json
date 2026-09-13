@@ -1,0 +1,2094 @@
+{
+  "passed": true,
+  "body_pages": 24,
+  "total_pages": 142,
+  "pdf_sha256": "ff395a71750f66df4625143a14348fb59487247d52e02eddce7ebac31a0b886a",
+  "checks": [
+    {
+      "name": "source/figures\\fig_q1_dispatch_soc.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q1_saving_waterfall.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q2_emergency_raster.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q2_quantile_curve.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q2_scheme_bar.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q2_typical_days.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q3_ablation_bar.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q3_plan_vs_adjust.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q3_value_dumbbell.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q4_info_value_diverging.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_q4_method_heatmap.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_sens_capacity_pareto.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_sens_efficiency_contour.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_att1_identity_bland.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_daily_profile_att1.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_forecast_decay.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_load_calendar.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_load_dow_ridgeline.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_price_raincloud_month.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_pv_hovmoller.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_drawio_mpc_timeline_v2.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_drawio_problem_relation.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_drawio_roadmap.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\fig_gptimg_microgrid_scene.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\tikz_newsvendor.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/figures\\tikz_q1_feasible.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\prepare_initialization.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\run.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\training.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\verification_q1.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\verification_training.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\verify_engineering.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\calendar_ledger.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\data_io.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\params.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\problem1.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\q2_lp_backend.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\q2_rolling.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\results_io.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\test_q2_selection.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\test_time_axis.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\time_axis.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q1_q2\\code\\utils.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\dispatch_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\export_comparison.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\export_result3.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\forecast_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\math_word.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\paper_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\prepare_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\reproduce_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\run_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q3\\code\\test_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\control_study.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\delivery_data.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\dispatch.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\export_tables.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\forecast.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\math_word.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\paper.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\pdf_paper.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\run.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\table_specs.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\test_q4.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/code\\q4\\code\\verify_exports.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/结果工作簿\\result1.xlsx",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/结果工作簿\\result2.xlsx",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/结果工作簿\\result3.xlsx",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/结果工作簿\\result4-2.xlsx",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/结果工作簿\\result4-3.xlsx",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\build_plot_data.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\rebuild_all.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\requirements.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\verify_figures.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\_diagbase.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\_figbase.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\01_Q1\\gen_fig_q1_dispatch_soc.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\01_Q1\\gen_fig_q1_saving_waterfall.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\02_Q2\\gen_fig_q2_emergency_raster.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\02_Q2\\gen_fig_q2_quantile_curve.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\02_Q2\\gen_fig_q2_scheme_compare.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\02_Q2\\gen_fig_q2_typical_days.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\03_Q3\\gen_fig_q3_ablation_bar.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\03_Q3\\gen_fig_q3_plan_vs_adjust.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\03_Q3\\gen_fig_q3_value_dumbbell.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\04_Q4\\gen_fig_q4_info_value_diverging.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\04_Q4\\gen_fig_q4_method_heatmap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\05_sensitivity\\gen_fig_sens_capacity_pareto.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\05_sensitivity\\gen_fig_sens_efficiency_contour.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\06_EDA\\gen_fig_att1_identity_bland.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\06_EDA\\gen_fig_daily_profile_att1.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\06_EDA\\gen_fig_forecast_decay.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\06_EDA\\gen_fig_load_calendar.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\06_EDA\\gen_fig_load_dow_ridgeline.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\06_EDA\\gen_fig_price_raincloud_month.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\06_EDA\\gen_fig_pv_hovmoller.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\07_diagrams\\gen_fig_drawio_mpc_timeline.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\07_diagrams\\gen_fig_drawio_problem_relation.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\07_diagrams\\gen_fig_drawio_roadmap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\07_diagrams\\gen_fig_gptimg_microgrid_scene.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\08_tikz\\tikz_newsvendor.tex",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\08_tikz\\tikz_q1_feasible.tex",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\source_manifest.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\verification.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_a_attachments.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_a_attachments.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_b_q1_sens.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_b_q1_sens.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_c_q2.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_c_q2.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_d_q3.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_d_q3.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_e_q4.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source/图表代码\\data\\_plot_e_q4.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q1_q2/figures/problem_1_results.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q1_q2/figures/problem_1_arrays.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q1_q2/output/q2_selection/summary.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q3/results/summary.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q4/results/summary.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q1_q2/output/q2_selection/selected.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q1_q2/output/q2_selection/selected.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q3/results/formal.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q3/results/formal.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q4/results/q4_2_quantile.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q4/results/q4_2_quantile.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q4/results/q4_3_joint.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/q4/results/q4_3_joint.npz",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/核验记录/engineering.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_data/核验记录/q1_milp.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_template/lib.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_template/example.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_template/template.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_font/SimHei.ttf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_font/SimKai.ttf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_font/SimSun.ttf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_font/TimesNewRoman-Bold-Italic.ttf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_font/TimesNewRoman-Bold.ttf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_font/TimesNewRoman-Italic.ttf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_font/TimesNewRoman.ttf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\prepare_initialization.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\run.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\training.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\verification_q1.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\verification_training.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\verify_engineering.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\calendar_ledger.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\data_io.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\params.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\problem1.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\q2_lp_backend.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\q2_rolling.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\results_io.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\test_q2_selection.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\test_time_axis.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\time_axis.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q1_q2\\code\\utils.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\dispatch_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\export_comparison.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\export_result3.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\forecast_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\math_word.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\paper_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\prepare_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\reproduce_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\run_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q3\\code\\test_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\control_study.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\delivery_data.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\dispatch.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\export_tables.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\forecast.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\math_word.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\paper.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\pdf_paper.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\run.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\table_specs.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\test_q4.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax/code\\q4\\code\\verify_exports.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all_41_source_files",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/prepare_initialization.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/calendar_ledger.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/data_io.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/params.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/problem1.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/q2_lp_backend.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/q2_rolling.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/results_io.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/test_q2_selection.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/test_time_axis.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/time_axis.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q1_q2/code/utils.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/dispatch_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/export_comparison.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/export_result3.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/forecast_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/math_word.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/paper_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/prepare_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/reproduce_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/run_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q3/code/test_v5.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/control_study.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/delivery_data.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/dispatch.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/export_tables.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/forecast.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/math_word.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/paper.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/pdf_paper.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/run.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/table_specs.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/test_q4.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/q4/code/verify_exports.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/run.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/training.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/verification_q1.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/verification_training.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "full_code/verify_engineering.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "body_pages_at_most_30",
+      "passed": true,
+      "detail": 24
+    },
+    {
+      "name": "appendix_after_references",
+      "passed": true,
+      "detail": 142
+    },
+    {
+      "name": "formal_cost_in_pdf/35126.95",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "formal_cost_in_pdf/13958646.46",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "formal_cost_in_pdf/13500015.02",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "formal_cost_in_pdf/14794076.18",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "formal_cost_in_pdf/14287528.15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_section/摘要",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_section/灵敏度分析",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_section/模型推广",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_section/参考文献",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "four_branches_date/2025-03-20",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "four_branches_date/2025-06-21",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "four_branches_date/2025-09-23",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "four_branches_date/2025-12-21",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "table_count_41",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "q2_only_emergency_table",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "q3_q4_no_result_tables",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "q3_no_added_shapley_formula",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "waterfall_removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "code_appendix_reads_full_source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all_code_filenames_in_pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/tikz_q1_feasible.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q1_dispatch_soc.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_sens_efficiency_contour.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q2_scheme_bar.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q3_plan_vs_adjust.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_drawio_problem_relation.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_daily_profile_att1.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_load_calendar.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_pv_hovmoller.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_forecast_decay.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q2_typical_days.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q2_emergency_raster.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_drawio_mpc_timeline_v2.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q3_value_dumbbell.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q3_ablation_bar.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q4_method_heatmap.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_q4_info_value_diverging.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "figure_reference/figures/fig_sens_capacity_pareto.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/appendix.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/intro.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/main.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/q1.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/q2.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/q3.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/q4.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/tables.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_placeholder/validation.typ",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "page_bounds/1",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/2",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/3",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/4",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/5",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/6",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/7",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/8",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/9",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/10",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/11",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/12",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/13",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/14",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/15",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/16",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/17",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/18",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/19",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/20",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/21",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/22",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/23",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/24",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/25",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/26",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/27",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/28",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/29",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/30",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/31",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/32",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/33",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/34",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/35",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/36",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/37",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/38",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/39",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/40",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/41",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/42",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/43",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/44",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/45",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/46",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/47",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/48",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/49",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/50",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/51",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/52",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/53",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/54",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/55",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/56",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/57",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/58",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/59",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/60",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/61",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/62",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/63",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/64",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/65",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/66",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/67",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/68",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/69",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/70",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/71",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/72",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/73",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/74",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/75",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/76",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/77",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/78",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/79",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/80",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/81",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/82",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/83",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/84",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/85",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/86",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/87",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/88",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/89",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/90",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/91",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/92",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/93",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/94",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/95",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/96",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/97",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/98",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/99",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/100",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/101",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/102",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/103",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/104",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/105",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/106",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/107",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/108",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/109",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/110",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/111",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/112",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/113",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/114",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/115",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/116",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/117",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/118",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/119",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/120",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/121",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/122",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/123",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/124",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/125",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/126",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/127",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/128",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/129",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/130",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/131",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/132",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/133",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/134",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/135",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/136",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/137",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/138",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/139",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/140",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/141",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "page_bounds/142",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "previous_numeric_checks_unchanged_inputs",
+      "passed": true,
+      "detail": 44
+    }
+  ],
+  "scope": "Source hashes, final data fingerprints, preserved template/fonts, source excerpts, PDF text and bounds. Existing numerical checks reused only after all source data hashes matched. Visual page inspection performed separately."
+}

@@ -1,0 +1,181 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "q2/2025-03-20/natural_balance",
+      "error": 3.637978807091713e-12
+    },
+    {
+      "name": "q2/2025-06-21/natural_balance",
+      "error": 0.0
+    },
+    {
+      "name": "q2/2025-09-23/natural_balance",
+      "error": 7.275957614183426e-12
+    },
+    {
+      "name": "q2/2025-12-21/natural_balance",
+      "error": 3.637978807091713e-12
+    },
+    {
+      "name": "q2/daily_cost_sum",
+      "error": 0.0
+    },
+    {
+      "name": "q2/soc_recursion",
+      "error": 9.094947017729282e-13
+    },
+    {
+      "name": "q2/cross_day",
+      "error": 0.0
+    },
+    {
+      "name": "q2/charge_discharge_overlap",
+      "error": 0
+    },
+    {
+      "name": "q2/emergency_charge_overlap",
+      "error": 0
+    },
+    {
+      "name": "q2/storage_limits",
+      "error": 0.0
+    },
+    {
+      "name": "q2/power_limits",
+      "error": 0.0
+    },
+    {
+      "name": "q3/2025-03-20/natural_balance",
+      "error": 7.275957614183426e-12
+    },
+    {
+      "name": "q3/2025-06-21/natural_balance",
+      "error": 0.0
+    },
+    {
+      "name": "q3/2025-09-23/natural_balance",
+      "error": 0.0
+    },
+    {
+      "name": "q3/2025-12-21/natural_balance",
+      "error": 0.0
+    },
+    {
+      "name": "q3/daily_cost_sum",
+      "error": 0.0
+    },
+    {
+      "name": "q3/soc_recursion",
+      "error": 9.094947017729282e-13
+    },
+    {
+      "name": "q3/cross_day",
+      "error": 0.0
+    },
+    {
+      "name": "q3/charge_discharge_overlap",
+      "error": 0
+    },
+    {
+      "name": "q3/emergency_charge_overlap",
+      "error": 0
+    },
+    {
+      "name": "q3/storage_limits",
+      "error": 0.0
+    },
+    {
+      "name": "q3/power_limits",
+      "error": 0.0
+    },
+    {
+      "name": "q42/2025-03-20/natural_balance",
+      "error": 3.637978807091713e-12
+    },
+    {
+      "name": "q42/2025-06-21/natural_balance",
+      "error": 1.8189894035458565e-12
+    },
+    {
+      "name": "q42/2025-09-23/natural_balance",
+      "error": 3.637978807091713e-12
+    },
+    {
+      "name": "q42/2025-12-21/natural_balance",
+      "error": 0.0
+    },
+    {
+      "name": "q42/daily_cost_sum",
+      "error": 0.0
+    },
+    {
+      "name": "q42/soc_recursion",
+      "error": 9.094947017729282e-13
+    },
+    {
+      "name": "q42/cross_day",
+      "error": 0.0
+    },
+    {
+      "name": "q42/charge_discharge_overlap",
+      "error": 0
+    },
+    {
+      "name": "q42/emergency_charge_overlap",
+      "error": 0
+    },
+    {
+      "name": "q42/storage_limits",
+      "error": 0.0
+    },
+    {
+      "name": "q42/power_limits",
+      "error": 0.0
+    },
+    {
+      "name": "q43/2025-03-20/natural_balance",
+      "error": 3.637978807091713e-12
+    },
+    {
+      "name": "q43/2025-06-21/natural_balance",
+      "error": 1.8189894035458565e-12
+    },
+    {
+      "name": "q43/2025-09-23/natural_balance",
+      "error": 0.0
+    },
+    {
+      "name": "q43/2025-12-21/natural_balance",
+      "error": 3.637978807091713e-12
+    },
+    {
+      "name": "q43/daily_cost_sum",
+      "error": 0.0
+    },
+    {
+      "name": "q43/soc_recursion",
+      "error": 9.094947017729282e-13
+    },
+    {
+      "name": "q43/cross_day",
+      "error": 0.0
+    },
+    {
+      "name": "q43/charge_discharge_overlap",
+      "error": 0
+    },
+    {
+      "name": "q43/emergency_charge_overlap",
+      "error": 0
+    },
+    {
+      "name": "q43/storage_limits",
+      "error": 0.0
+    },
+    {
+      "name": "q43/power_limits",
+      "error": 0.0
+    }
+  ]
+}

@@ -1,0 +1,809 @@
+{
+  "passed": true,
+  "models": 61,
+  "intervals": 2933856,
+  "maximum_errors": {
+    "balance": 4.547473508864641e-13,
+    "recursion": 9.094947017729282e-13,
+    "cross_day": 0.0,
+    "cash": 1.862645149230957e-09,
+    "natural_day": 1.8189894035458565e-11
+  },
+  "details": [
+    {
+      "question": "q2",
+      "model": "baseline",
+      "intervals": 48096,
+      "cash": 15337036.767819092,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q2",
+      "model": "reference_q80",
+      "intervals": 48096,
+      "cash": 14123996.476025127,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q2",
+      "model": "static_heuristic",
+      "intervals": 48096,
+      "cash": 13975558.743882358,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q2",
+      "model": "rolling_point",
+      "intervals": 48096,
+      "cash": 15246978.584695734,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q2",
+      "model": "selected",
+      "intervals": 48096,
+      "cash": 13958646.462027336,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "formal",
+      "intervals": 48096,
+      "cash": 13500015.015671711,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "static",
+      "intervals": 48096,
+      "cash": 13836019.482379649,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "mask_0",
+      "intervals": 48096,
+      "cash": 13575267.772486277,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "mask_1",
+      "intervals": 48096,
+      "cash": 13540572.89198651,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "mask_2",
+      "intervals": 48096,
+      "cash": 13534575.58059255,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "mask_3",
+      "intervals": 48096,
+      "cash": 13499946.701629285,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "mask_4",
+      "intervals": 48096,
+      "cash": 13575292.204336392,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "mask_5",
+      "intervals": 48096,
+      "cash": 13540629.645005502,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "mask_6",
+      "intervals": 48096,
+      "cash": 13534647.324859895,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "rule_band",
+      "intervals": 48096,
+      "cash": 13517173.837219771,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "rule_scenario",
+      "intervals": 48096,
+      "cash": 13515552.47491764,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "point",
+      "intervals": 48096,
+      "cash": 13663346.6466691,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "latest_full",
+      "intervals": 48096,
+      "cash": 13679329.29365307,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "latest_static",
+      "intervals": 48096,
+      "cash": 14160534.615563292,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "lag7_point_full",
+      "intervals": 48096,
+      "cash": 13715667.448608141,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "lag7_point_static",
+      "intervals": 48096,
+      "cash": 15485819.235840142,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "residual_14",
+      "intervals": 48096,
+      "cash": 13487437.129598277,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "residual_42",
+      "intervals": 48096,
+      "cash": 13473843.407645427,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "weight_28",
+      "intervals": 48096,
+      "cash": 13499722.773942258,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "weight_84",
+      "intervals": 48096,
+      "cash": 13500888.93826102,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "terminal_3600",
+      "intervals": 48096,
+      "cash": 13481870.196502913,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "terminal_8400",
+      "intervals": 48096,
+      "cash": 13526110.785675254,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "gate_0.05",
+      "intervals": 48096,
+      "cash": 13499956.527710125,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "gate_0.1",
+      "intervals": 48096,
+      "cash": 13499946.701629285,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "initial_6000",
+      "intervals": 48096,
+      "cash": 13500940.699308278,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "reserve_1200",
+      "intervals": 48096,
+      "cash": 13523188.39420655,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q3",
+      "model": "reserve_2400",
+      "intervals": 48096,
+      "cash": 13502347.38780507,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_old",
+      "intervals": 48096,
+      "cash": 14784972.371388646,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_point",
+      "intervals": 48096,
+      "cash": 16096389.143263262,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_quantile",
+      "intervals": 48096,
+      "cash": 14794076.183750596,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.0913936421275139e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_weighted",
+      "intervals": 48096,
+      "cash": 14805152.201973634,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_independent",
+      "intervals": 48096,
+      "cash": 14827998.025701202,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.0913936421275139e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_joint",
+      "intervals": 48096,
+      "cash": 14844628.430598592,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.0913936421275139e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_oracle",
+      "intervals": 48096,
+      "cash": 14744536.291474909,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_old",
+      "intervals": 48096,
+      "cash": 14298809.044098908,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_point",
+      "intervals": 48096,
+      "cash": 14455527.679157164,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_quantile",
+      "intervals": 48096,
+      "cash": 14299351.660352888,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_weighted",
+      "intervals": 48096,
+      "cash": 14307941.62626836,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_independent",
+      "intervals": 48096,
+      "cash": 14288147.341233768,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_joint",
+      "intervals": 48096,
+      "cash": 14287528.14927262,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.0913936421275139e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_oracle",
+      "intervals": 48096,
+      "cash": 14149404.21268754,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "common0_static",
+      "intervals": 48096,
+      "cash": 14690242.572408574,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "price_frozen",
+      "intervals": 48096,
+      "cash": 14287528.14927262,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.0913936421275139e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "pv_frozen",
+      "intervals": 48096,
+      "cash": 14332601.833443321,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.0913936421275139e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "pv_6",
+      "intervals": 48096,
+      "cash": 14332918.489400195,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "pv_6_12",
+      "intervals": 48096,
+      "cash": 14287467.239567768,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_window14",
+      "intervals": 48096,
+      "cash": 14815237.244076882,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.0913936421275139e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_window42",
+      "intervals": 48096,
+      "cash": 14739598.208250461,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_target3600",
+      "intervals": 48096,
+      "cash": 14771690.064942978,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_target8400",
+      "intervals": 48096,
+      "cash": 14840808.011933882,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.0913936421275139e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_window14",
+      "intervals": 48096,
+      "cash": 14219144.706249293,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_window42",
+      "intervals": 48096,
+      "cash": 14268562.015219238,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_target3600",
+      "intervals": 48096,
+      "cash": 14267901.763525242,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 0.0,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_target8400",
+      "intervals": 48096,
+      "cash": 14330872.119481813,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.8189894035458565e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_2_mpc",
+      "intervals": 48096,
+      "cash": 14908302.105326656,
+      "errors": {
+        "balance": 4.547473508864641e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    },
+    {
+      "question": "q4",
+      "model": "q4_3_mpc",
+      "intervals": 48096,
+      "cash": 14461786.571828675,
+      "errors": {
+        "balance": 2.2737367544323206e-13,
+        "recursion": 9.094947017729282e-13,
+        "cross_day": 0.0,
+        "cash": 1.862645149230957e-09,
+        "natural_day": 1.4551915228366852e-11
+      }
+    }
+  ],
+  "q1_workbook_matches_arrays": true,
+  "initialization_consistent": true
+}

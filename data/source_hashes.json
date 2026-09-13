@@ -1,0 +1,17 @@
+{
+  "q1_q2/figures/problem_1_results.json": "423a17ce36740be4b0480f4f7bd28330926ae5429b0f879441a4062b94e0ff66",
+  "q1_q2/figures/problem_1_arrays.npz": "53dc8711c87d4309532b861ca5ff248025fa61f09f0689e28db27d8ca50112ff",
+  "q1_q2/output/q2_selection/summary.json": "b5e1b2e1e232e377006d601bd3d851c5bf019d5fac1c4ea211bc82d5f33482fd",
+  "q3/results/summary.json": "cecb33d5088b825336832b79c2f3a4e84b7d6a8348a190bf17f160bea7217821",
+  "q4/results/summary.json": "650d398963bc1954c3c4020777f780d19e81bdf5b2283eace0f524fe5bcdc895",
+  "q1_q2/output/q2_selection/selected.json": "400ec54e5ec0fecfa9661d6fafed5bde31c714678a86c25cf9f17902739af9c8",
+  "q1_q2/output/q2_selection/selected.npz": "c2ba1634a9e3f26ef67ce4f159b4fe64482186a54fd64a414ea9329dae20622b",
+  "q3/results/formal.json": "ac469d8a26bd07e16d6100573f5d948da4e99b9eb7426e404821d130bb164fe1",
+  "q3/results/formal.npz": "6a0c4d722124ffbbdff9f37a697f7bac942f7f0dd9e98a3428cb6a40bee3ca21",
+  "q4/results/q4_2_quantile.json": "b46b5dafc95a034f71cda75db2898998c36334487ad1adca6a5993c89f147a32",
+  "q4/results/q4_2_quantile.npz": "bcd76cbfd9d11226fcbd0cb4e20423951d30f38600ffead7b9d4b7b8aeb6dcf3",
+  "q4/results/q4_3_joint.json": "9ad89538f2c7e95be64925b54010c8a426ef055a1633f8b77d698e1158262c88",
+  "q4/results/q4_3_joint.npz": "33b2f694ee4df208c2054cf77fa24c157aad85069dd6a0792fd9e7262867cdd2",
+  "核验记录/engineering.json": "7b00dc2e769301dc6515772a2640f5c41d77214da36638e3056762aac88642ed",
+  "核验记录/q1_milp.json": "f6858108ec704c80f0830717541a6f529b37b7e14d9718a2b59efe8fcaf0e085"
+}

@@ -1,0 +1,1466 @@
+{
+  "training.py": [
+    {
+      "name": "samples",
+      "start": 8,
+      "end": 16,
+      "code": "def samples(series, feature, earliest, day, window, start=0):\n    xs=[];ys=[];counts={}\n    for k in range(max(earliest,day-window),day):\n        stop=143 if k==day-1 else 144\n        if stop<=start:continue\n        x=np.asarray(feature(k))[start:stop]\n        xs.append(x);ys.append(series[k,start:stop]);counts[str(k)]=len(x)\n    return (np.concatenate(xs) if xs else None,\n            np.concatenate(ys) if ys else None,counts)",
+      "display": [
+        {
+          "number": "8",
+          "text": "def samples(series, feature, earliest, day, window, start=0):"
+        },
+        {
+          "number": "9",
+          "text": "    xs=[];ys=[];counts={}"
+        },
+        {
+          "number": "10",
+          "text": "    for k in range(max(earliest,day-window),day):"
+        },
+        {
+          "number": "11",
+          "text": "        stop=143 if k==day-1 else 144"
+        },
+        {
+          "number": "12",
+          "text": "        if stop<=start:continue"
+        },
+        {
+          "number": "13",
+          "text": "        x=np.asarray(feature(k))[start:stop]"
+        },
+        {
+          "number": "14",
+          "text": "        xs.append(x);ys.append(series[k,start:stop]);counts[str(k)]=len(x)"
+        },
+        {
+          "number": "15",
+          "text": "    return (np.concatenate(xs) if xs else None,"
+        },
+        {
+          "number": "16",
+          "text": "            np.concatenate(ys) if ys else None,counts)"
+        }
+      ]
+    },
+    {
+      "name": "choose",
+      "start": 35,
+      "end": 43,
+      "code": "def choose(rows, cutoff, simple_key):\n    assessed=[]\n    for row in rows:\n        values=losses_before(row['loss_records'],cutoff)\n        if not len(values):continue\n        assessed.append((row,float(values.mean()),float(values.std(ddof=1)/np.sqrt(len(values))) if len(values)>1 else 0.))\n    if not assessed:return min(rows,key=simple_key)\n    best=min(assessed,key=lambda r:r[1]);threshold=best[1]+best[2]\n    return min((r for r,m,s in assessed if m<=threshold+1e-12),key=simple_key)",
+      "display": [
+        {
+          "number": "35",
+          "text": "def choose(rows, cutoff, simple_key):"
+        },
+        {
+          "number": "36",
+          "text": "    assessed=[]"
+        },
+        {
+          "number": "37",
+          "text": "    for row in rows:"
+        },
+        {
+          "number": "38",
+          "text": "        values=losses_before(row['loss_records'],cutoff)"
+        },
+        {
+          "number": "39",
+          "text": "        if not len(values):continue"
+        },
+        {
+          "number": "40",
+          "text": "        assessed.append((row,float(values.mean()),float(values.std(ddof=1)/np.sqrt("
+        },
+        {
+          "number": "↪",
+          "text": "len(values))) if len(values)>1 else 0.))"
+        },
+        {
+          "number": "41",
+          "text": "    if not assessed:return min(rows,key=simple_key)"
+        },
+        {
+          "number": "42",
+          "text": "    best=min(assessed,key=lambda r:r[1]);threshold=best[1]+best[2]"
+        },
+        {
+          "number": "43",
+          "text": "    return min((r for r,m,s in assessed if m<=threshold+1e-12),key=simple_key)"
+        }
+      ]
+    },
+    {
+      "name": "selection_costs",
+      "start": 45,
+      "end": 56,
+      "code": "def selection_costs(result, prices, value, key='adjusted'):\n    \"\"\"January validation ends at Feb1 00:00, before Jan31's last slot.\n\n    Remove its settlement and replace its terminal inventory by midnight SOC.\n    The run retains the full trace for a physical audit, never for selection.\n    \"\"\"\n    a=result['arrays'];v=np.array([r[key] for r in result['daily']],float)\n    q,q0,e=a['q'][-1,-1],a['q0'][-1,-1],a['e'][-1,-1]\n    last=float(prices[-1])*(min(q,q0)+.5*max(q0-q,0)+1.5*max(q-q0,0)+5*e)\n    v[-1]-=last\n    v[-1]+=value*(a['E'][-1,-1]-a['E'][-1,-2])\n    return v",
+      "display": [
+        {
+          "number": "45",
+          "text": "def selection_costs(result, prices, value, key='adjusted'):"
+        },
+        {
+          "number": "46",
+          "text": "    \"\"\"January validation ends at Feb1 00:00, before Jan31's last slot."
+        },
+        {
+          "number": "47",
+          "text": ""
+        },
+        {
+          "number": "48",
+          "text": "    Remove its settlement and replace its terminal inventory by midnight SOC."
+        },
+        {
+          "number": "49",
+          "text": "    The run retains the full trace for a physical audit, never for selection."
+        },
+        {
+          "number": "50",
+          "text": "    \"\"\""
+        },
+        {
+          "number": "51",
+          "text": "    a=result['arrays'];v=np.array([r[key] for r in result['daily']],float)"
+        },
+        {
+          "number": "52",
+          "text": "    q,q0,e=a['q'][-1,-1],a['q0'][-1,-1],a['e'][-1,-1]"
+        },
+        {
+          "number": "53",
+          "text": "    last=float(prices[-1])*(min(q,q0)+.5*max(q0-q,0)+1.5*max(q-q0,0)+5*e)"
+        },
+        {
+          "number": "54",
+          "text": "    v[-1]-=last"
+        },
+        {
+          "number": "55",
+          "text": "    v[-1]+=value*(a['E'][-1,-1]-a['E'][-1,-2])"
+        },
+        {
+          "number": "56",
+          "text": "    return v"
+        }
+      ]
+    }
+  ],
+  "q1_q2/code/utils.py": [
+    {
+      "name": "build_lp",
+      "start": 36,
+      "end": 113,
+      "code": "def build_lp(price, load, pv, S_init=SOC_INIT, closed=False,\n             allow_emergency=True, fix=None, emergency_mult=KAPPA_E):\n    \"\"\"构造单情景确定性调度 LP 并求解。\n\n    变量序 x = [g(T), c(T), d(T), w(T), e(T), S(T)]，S_t 为第 t 时隙末荷电。\n    目标：min  Σ p_t g_t + emergency_mult Σ p_t e_t\n    约束：\n      供需平衡(等式，w 为弃电松弛)：g_t + d_t + e_t - c_t - w_t = load_t - pv_t\n      荷电递推：S_0 = S_init + η_c c_0 - d_0/η_d;  S_t = S_{t-1} + η_c c_t - d_t/η_d\n      日闭合(可选)：S_{T-1} = S_init\n      变量界：g,w ≥0; 0≤c,d≤上限; e≥0(禁用时=0); SOC∈[下,上]\n      fix：dict{'g'|'c'|'d'|'e'|'S': array(T)}，非 NaN 分量以等式锁定\n    返回 dict(status, cost_plan, cost_emergency, g,c,d,w,e,S)。\n    \"\"\"\n    price = np.asarray(price, float)\n    load = np.asarray(load, float)\n    pv = np.asarray(pv, float)\n\n    cobj = np.zeros(NVAR)\n    cobj[OFF_G:OFF_G + T] = price\n    cobj[OFF_E:OFF_E + T] = emergency_mult * price\n\n    rows, cols, vals, b_eq = [], [], [], []\n    r = 0\n\n    def put(col, v):\n        rows.append(r); cols.append(col); vals.append(v)\n\n    # 供需平衡\n    for t in range(T):\n        put(OFF_G + t, 1.0); put(OFF_D + t, 1.0); put(OFF_E + t, 1.0)\n        put(OFF_C + t, -1.0); put(OFF_W + t, -1.0)\n        b_eq.append(load[t] - pv[t]); r += 1\n    # 荷电递推\n    for t in range(T):\n        put(OFF_S + t, 1.0)\n        put(OFF_C + t, -ETA_C); put(OFF_D + t, 1.0 / ETA_D)\n        if t == 0:\n            b_eq.append(S_init)\n        else:\n            put(OFF_S + (t - 1), -1.0); b_eq.append(0.0)\n        r += 1\n    # 日闭合\n    if closed:\n        put(OFF_S + (T - 1), 1.0); b_eq.append(S_init); r += 1\n    # 固定分量\n    if fix:\n        blk = {'g': OFF_G, 'c': OFF_C, 'd': OFF_D, 'w': OFF_W, 'e': OFF_E, 'S': OFF_S}\n        for name, arr in fix.items():\n            base = blk[name]\n            arr = np.asarray(arr, float)\n            for t in range(T):\n                if not np.isnan(arr[t]):\n                    put(base + t, 1.0); b_eq.append(float(arr[t])); r += 1\n\n    A_eq = sp.csr_matrix((vals, (rows, cols)), shape=(r, NVAR))\n    b_eq = np.asarray(b_eq, float)\n\n    inf = None\n    bounds = ([(0, inf)] * T +                         # g\n              [(0, SLOT_ENERGY_CAP)] * T +             # c\n              [(0, SLOT_ENERGY_CAP)] * T +             # d\n              [(0, inf)] * T +                         # w\n              ([(0, inf)] if allow_emergency else [(0, 0)]) * T +  # e\n              [(SOC_MIN, SOC_MAX)] * T)                # S\n\n    res = linprog(cobj, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method=\"highs\")\n    out = {\"status\": res.status, \"success\": res.success,\n           \"message\": res.message}\n    if res.success:\n        x = res.x\n        g = x[OFF_G:OFF_G + T]; c = x[OFF_C:OFF_C + T]; d = x[OFF_D:OFF_D + T]\n        w = x[OFF_W:OFF_W + T]; e = x[OFF_E:OFF_E + T]; S = x[OFF_S:OFF_S + T]\n        out.update(g=g, c=c, d=d, w=w, e=e, S=S,\n                   cost_plan=float(price @ g),\n                   cost_emergency=float(emergency_mult * (price @ e)),\n                   objective=float(res.fun))\n    return out",
+      "display": [
+        {
+          "number": "36",
+          "text": "def build_lp(price, load, pv, S_init=SOC_INIT, closed=False,"
+        },
+        {
+          "number": "37",
+          "text": "             allow_emergency=True, fix=None, emergency_mult=KAPPA_E):"
+        },
+        {
+          "number": "38",
+          "text": "    \"\"\"构造单情景确定性调度 LP 并求解。"
+        },
+        {
+          "number": "39",
+          "text": ""
+        },
+        {
+          "number": "40",
+          "text": "    变量序 x = [g(T), c(T), d(T), w(T), e(T), S(T)]，S_t 为第 t 时隙末荷电。"
+        },
+        {
+          "number": "41",
+          "text": "    目标：min  Σ p_t g_t + emergency_mult Σ p_t e_t"
+        },
+        {
+          "number": "42",
+          "text": "    约束："
+        },
+        {
+          "number": "43",
+          "text": "      供需平衡(等式，w 为弃电松弛)：g_t + d_t + e_t - c_t - w_t = load_t - pv_t"
+        },
+        {
+          "number": "44",
+          "text": "      荷电递推：S_0 = S_init + η_c c_0 - d_0/η_d;  S_t = S_{t-1} + η_c c_t - d_t/η_"
+        },
+        {
+          "number": "↪",
+          "text": "d"
+        },
+        {
+          "number": "45",
+          "text": "      日闭合(可选)：S_{T-1} = S_init"
+        },
+        {
+          "number": "46",
+          "text": "      变量界：g,w ≥0; 0≤c,d≤上限; e≥0(禁用时=0); SOC∈[下,上]"
+        },
+        {
+          "number": "47",
+          "text": "      fix：dict{'g'|'c'|'d'|'e'|'S': array(T)}，非 NaN 分量以等式锁定"
+        },
+        {
+          "number": "48",
+          "text": "    返回 dict(status, cost_plan, cost_emergency, g,c,d,w,e,S)。"
+        },
+        {
+          "number": "49",
+          "text": "    \"\"\""
+        },
+        {
+          "number": "50",
+          "text": "    price = np.asarray(price, float)"
+        },
+        {
+          "number": "51",
+          "text": "    load = np.asarray(load, float)"
+        },
+        {
+          "number": "52",
+          "text": "    pv = np.asarray(pv, float)"
+        },
+        {
+          "number": "53",
+          "text": ""
+        },
+        {
+          "number": "54",
+          "text": "    cobj = np.zeros(NVAR)"
+        },
+        {
+          "number": "55",
+          "text": "    cobj[OFF_G:OFF_G + T] = price"
+        },
+        {
+          "number": "56",
+          "text": "    cobj[OFF_E:OFF_E + T] = emergency_mult * price"
+        },
+        {
+          "number": "57",
+          "text": ""
+        },
+        {
+          "number": "58",
+          "text": "    rows, cols, vals, b_eq = [], [], [], []"
+        },
+        {
+          "number": "59",
+          "text": "    r = 0"
+        },
+        {
+          "number": "60",
+          "text": ""
+        },
+        {
+          "number": "61",
+          "text": "    def put(col, v):"
+        },
+        {
+          "number": "62",
+          "text": "        rows.append(r); cols.append(col); vals.append(v)"
+        },
+        {
+          "number": "63",
+          "text": ""
+        },
+        {
+          "number": "64",
+          "text": "    # 供需平衡"
+        },
+        {
+          "number": "65",
+          "text": "    for t in range(T):"
+        },
+        {
+          "number": "66",
+          "text": "        put(OFF_G + t, 1.0); put(OFF_D + t, 1.0); put(OFF_E + t, 1.0)"
+        },
+        {
+          "number": "67",
+          "text": "        put(OFF_C + t, -1.0); put(OFF_W + t, -1.0)"
+        },
+        {
+          "number": "68",
+          "text": "        b_eq.append(load[t] - pv[t]); r += 1"
+        },
+        {
+          "number": "69",
+          "text": "    # 荷电递推"
+        },
+        {
+          "number": "70",
+          "text": "    for t in range(T):"
+        },
+        {
+          "number": "71",
+          "text": "        put(OFF_S + t, 1.0)"
+        },
+        {
+          "number": "72",
+          "text": "        put(OFF_C + t, -ETA_C); put(OFF_D + t, 1.0 / ETA_D)"
+        },
+        {
+          "number": "73",
+          "text": "        if t == 0:"
+        },
+        {
+          "number": "74",
+          "text": "            b_eq.append(S_init)"
+        },
+        {
+          "number": "75",
+          "text": "        else:"
+        },
+        {
+          "number": "76",
+          "text": "            put(OFF_S + (t - 1), -1.0); b_eq.append(0.0)"
+        },
+        {
+          "number": "77",
+          "text": "        r += 1"
+        },
+        {
+          "number": "78",
+          "text": "    # 日闭合"
+        },
+        {
+          "number": "79",
+          "text": "    if closed:"
+        },
+        {
+          "number": "80",
+          "text": "        put(OFF_S + (T - 1), 1.0); b_eq.append(S_init); r += 1"
+        },
+        {
+          "number": "81",
+          "text": "    # 固定分量"
+        },
+        {
+          "number": "82",
+          "text": "    if fix:"
+        },
+        {
+          "number": "83",
+          "text": "        blk = {'g': OFF_G, 'c': OFF_C, 'd': OFF_D, 'w': OFF_W, 'e': OFF_E, 'S': OFF"
+        },
+        {
+          "number": "↪",
+          "text": "_S}"
+        },
+        {
+          "number": "84",
+          "text": "        for name, arr in fix.items():"
+        },
+        {
+          "number": "85",
+          "text": "            base = blk[name]"
+        },
+        {
+          "number": "86",
+          "text": "            arr = np.asarray(arr, float)"
+        },
+        {
+          "number": "87",
+          "text": "            for t in range(T):"
+        },
+        {
+          "number": "88",
+          "text": "                if not np.isnan(arr[t]):"
+        },
+        {
+          "number": "89",
+          "text": "                    put(base + t, 1.0); b_eq.append(float(arr[t])); r += 1"
+        },
+        {
+          "number": "90",
+          "text": ""
+        },
+        {
+          "number": "91",
+          "text": "    A_eq = sp.csr_matrix((vals, (rows, cols)), shape=(r, NVAR))"
+        },
+        {
+          "number": "92",
+          "text": "    b_eq = np.asarray(b_eq, float)"
+        },
+        {
+          "number": "93",
+          "text": ""
+        },
+        {
+          "number": "94",
+          "text": "    inf = None"
+        },
+        {
+          "number": "95",
+          "text": "    bounds = ([(0, inf)] * T +                         # g"
+        },
+        {
+          "number": "96",
+          "text": "              [(0, SLOT_ENERGY_CAP)] * T +             # c"
+        },
+        {
+          "number": "97",
+          "text": "              [(0, SLOT_ENERGY_CAP)] * T +             # d"
+        },
+        {
+          "number": "98",
+          "text": "              [(0, inf)] * T +                         # w"
+        },
+        {
+          "number": "99",
+          "text": "              ([(0, inf)] if allow_emergency else [(0, 0)]) * T +  # e"
+        },
+        {
+          "number": "100",
+          "text": "              [(SOC_MIN, SOC_MAX)] * T)                # S"
+        },
+        {
+          "number": "101",
+          "text": ""
+        },
+        {
+          "number": "102",
+          "text": "    res = linprog(cobj, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method=\"highs\")"
+        },
+        {
+          "number": "103",
+          "text": "    out = {\"status\": res.status, \"success\": res.success,"
+        },
+        {
+          "number": "104",
+          "text": "           \"message\": res.message}"
+        },
+        {
+          "number": "105",
+          "text": "    if res.success:"
+        },
+        {
+          "number": "106",
+          "text": "        x = res.x"
+        },
+        {
+          "number": "107",
+          "text": "        g = x[OFF_G:OFF_G + T]; c = x[OFF_C:OFF_C + T]; d = x[OFF_D:OFF_D + T]"
+        },
+        {
+          "number": "108",
+          "text": "        w = x[OFF_W:OFF_W + T]; e = x[OFF_E:OFF_E + T]; S = x[OFF_S:OFF_S + T]"
+        },
+        {
+          "number": "109",
+          "text": "        out.update(g=g, c=c, d=d, w=w, e=e, S=S,"
+        },
+        {
+          "number": "110",
+          "text": "                   cost_plan=float(price @ g),"
+        },
+        {
+          "number": "111",
+          "text": "                   cost_emergency=float(emergency_mult * (price @ e)),"
+        },
+        {
+          "number": "112",
+          "text": "                   objective=float(res.fun))"
+        },
+        {
+          "number": "113",
+          "text": "    return out"
+        }
+      ]
+    }
+  ],
+  "q1_q2/code/q2_rolling.py": [
+    {
+      "name": "plan",
+      "start": 109,
+      "end": 133,
+      "code": "def plan(net, price, s0, terminal=TERMINAL_REF, terminal_value=0.0):\n    \"\"\"确定性储能 LP；净负荷保留负值，terminal=None 表示自由期末状态。\"\"\"\n    net = np.asarray(net, float).ravel()\n    p = np.asarray(price, float).ravel()\n    n = len(net)\n    assert len(p) == n and np.isfinite(net).all()\n    A = matrix(n)\n    b = np.r_[net, np.zeros(n)]\n    b[n] = float(s0)\n    obj = np.r_[p, np.zeros(4 * n)]\n    obj[-1] = -float(terminal_value)\n    bounds = ([(0, None)] * n + [(0, SLOT_ENERGY_CAP)] * (2 * n)\n              + [(0, None)] * n + [(SOC_MIN, SOC_MAX)] * n)\n    if terminal is not None:\n        bounds[-1] = (float(terminal), float(terminal))\n    x, objective, dual, backend = solve_lp(obj, A, b, bounds)\n    g, c, d, w, s = (a.copy() for a in x.reshape(5, n))\n    delta = np.minimum(c, d / (ETA_C * ETA_D))\n    c -= delta\n    d -= ETA_C * ETA_D * delta\n    w += (1 - ETA_C * ETA_D) * delta\n    return dict(g=g, c=c, d=d, w=w, S=np.r_[s0, s], cost=float(p @ g),\n                optimized_objective=float(objective), terminal_value=float(terminal_value),\n                gap=float(abs(objective - dual)), residual=float(abs(A @ x - b).max()),\n                backend=backend)",
+      "display": [
+        {
+          "number": "109",
+          "text": "def plan(net, price, s0, terminal=TERMINAL_REF, terminal_value=0.0):"
+        },
+        {
+          "number": "110",
+          "text": "    \"\"\"确定性储能 LP；净负荷保留负值，terminal=None 表示自由期末状态。\"\"\""
+        },
+        {
+          "number": "111",
+          "text": "    net = np.asarray(net, float).ravel()"
+        },
+        {
+          "number": "112",
+          "text": "    p = np.asarray(price, float).ravel()"
+        },
+        {
+          "number": "113",
+          "text": "    n = len(net)"
+        },
+        {
+          "number": "114",
+          "text": "    assert len(p) == n and np.isfinite(net).all()"
+        },
+        {
+          "number": "115",
+          "text": "    A = matrix(n)"
+        },
+        {
+          "number": "116",
+          "text": "    b = np.r_[net, np.zeros(n)]"
+        },
+        {
+          "number": "117",
+          "text": "    b[n] = float(s0)"
+        },
+        {
+          "number": "118",
+          "text": "    obj = np.r_[p, np.zeros(4 * n)]"
+        },
+        {
+          "number": "119",
+          "text": "    obj[-1] = -float(terminal_value)"
+        },
+        {
+          "number": "120",
+          "text": "    bounds = ([(0, None)] * n + [(0, SLOT_ENERGY_CAP)] * (2 * n)"
+        },
+        {
+          "number": "121",
+          "text": "              + [(0, None)] * n + [(SOC_MIN, SOC_MAX)] * n)"
+        },
+        {
+          "number": "122",
+          "text": "    if terminal is not None:"
+        },
+        {
+          "number": "123",
+          "text": "        bounds[-1] = (float(terminal), float(terminal))"
+        },
+        {
+          "number": "124",
+          "text": "    x, objective, dual, backend = solve_lp(obj, A, b, bounds)"
+        },
+        {
+          "number": "125",
+          "text": "    g, c, d, w, s = (a.copy() for a in x.reshape(5, n))"
+        },
+        {
+          "number": "126",
+          "text": "    delta = np.minimum(c, d / (ETA_C * ETA_D))"
+        },
+        {
+          "number": "127",
+          "text": "    c -= delta"
+        },
+        {
+          "number": "128",
+          "text": "    d -= ETA_C * ETA_D * delta"
+        },
+        {
+          "number": "129",
+          "text": "    w += (1 - ETA_C * ETA_D) * delta"
+        },
+        {
+          "number": "130",
+          "text": "    return dict(g=g, c=c, d=d, w=w, S=np.r_[s0, s], cost=float(p @ g),"
+        },
+        {
+          "number": "131",
+          "text": "                optimized_objective=float(objective), terminal_value=float(terminal"
+        },
+        {
+          "number": "↪",
+          "text": "_value),"
+        },
+        {
+          "number": "132",
+          "text": "                gap=float(abs(objective - dual)), residual=float(abs(A @ x - b).max"
+        },
+        {
+          "number": "↪",
+          "text": "()),"
+        },
+        {
+          "number": "133",
+          "text": "                backend=backend)"
+        }
+      ]
+    },
+    {
+      "name": "fit_weights",
+      "start": 176,
+      "end": 204,
+      "code": "def fit_weights(series, lags, target_days, prior, ridge,\n                active_only=False, omit=None):\n    \"\"\"Huber 损失 + 向上一期权重收缩的单纯形约束估计。\"\"\"\n    prior = np.asarray(prior, float)\n    target_days = tuple(int(x) for x in target_days)\n    X, y, _ = _design(series, lags, target_days, active_only, omit)\n    if len(y) < 2:\n        return prior.copy(), dict(n_days=len(target_days), n_samples=len(y),\n                                  converged=True, fallback=\"prior\")\n    base = y - X @ prior\n    scale = max(float(np.median(np.abs(base - np.median(base)))), 1e-6)\n\n    def objective(w):\n        z = (y - X @ w) / scale\n        az = np.abs(z)\n        huber = np.where(az <= HUBER_DELTA, 0.5 * z * z,\n                         HUBER_DELTA * (az - 0.5 * HUBER_DELTA))\n        return float(huber.mean() + ridge * np.sum((w - prior) ** 2))\n\n    result = minimize(objective, prior, method=\"SLSQP\",\n                      bounds=[(0.0, 1.0)] * len(lags),\n                      constraints={\"type\": \"eq\", \"fun\": lambda w: w.sum() - 1.0},\n                      options={\"ftol\": 1e-12, \"maxiter\": 500})\n    if not result.success:\n        raise RuntimeError(f\"权重估计失败: {result.message}\")\n    w = np.maximum(result.x, 0.0)\n    w /= w.sum()\n    return w, dict(n_days=len(target_days), n_samples=len(y), scale=scale,\n                   objective=float(result.fun), iterations=int(result.nit), converged=True)",
+      "display": [
+        {
+          "number": "176",
+          "text": "def fit_weights(series, lags, target_days, prior, ridge,"
+        },
+        {
+          "number": "177",
+          "text": "                active_only=False, omit=None):"
+        },
+        {
+          "number": "178",
+          "text": "    \"\"\"Huber 损失 + 向上一期权重收缩的单纯形约束估计。\"\"\""
+        },
+        {
+          "number": "179",
+          "text": "    prior = np.asarray(prior, float)"
+        },
+        {
+          "number": "180",
+          "text": "    target_days = tuple(int(x) for x in target_days)"
+        },
+        {
+          "number": "181",
+          "text": "    X, y, _ = _design(series, lags, target_days, active_only, omit)"
+        },
+        {
+          "number": "182",
+          "text": "    if len(y) < 2:"
+        },
+        {
+          "number": "183",
+          "text": "        return prior.copy(), dict(n_days=len(target_days), n_samples=len(y),"
+        },
+        {
+          "number": "184",
+          "text": "                                  converged=True, fallback=\"prior\")"
+        },
+        {
+          "number": "185",
+          "text": "    base = y - X @ prior"
+        },
+        {
+          "number": "186",
+          "text": "    scale = max(float(np.median(np.abs(base - np.median(base)))), 1e-6)"
+        },
+        {
+          "number": "187",
+          "text": ""
+        },
+        {
+          "number": "188",
+          "text": "    def objective(w):"
+        },
+        {
+          "number": "189",
+          "text": "        z = (y - X @ w) / scale"
+        },
+        {
+          "number": "190",
+          "text": "        az = np.abs(z)"
+        },
+        {
+          "number": "191",
+          "text": "        huber = np.where(az <= HUBER_DELTA, 0.5 * z * z,"
+        },
+        {
+          "number": "192",
+          "text": "                         HUBER_DELTA * (az - 0.5 * HUBER_DELTA))"
+        },
+        {
+          "number": "193",
+          "text": "        return float(huber.mean() + ridge * np.sum((w - prior) ** 2))"
+        },
+        {
+          "number": "194",
+          "text": ""
+        },
+        {
+          "number": "195",
+          "text": "    result = minimize(objective, prior, method=\"SLSQP\","
+        },
+        {
+          "number": "196",
+          "text": "                      bounds=[(0.0, 1.0)] * len(lags),"
+        },
+        {
+          "number": "197",
+          "text": "                      constraints={\"type\": \"eq\", \"fun\": lambda w: w.sum() - 1.0},"
+        },
+        {
+          "number": "198",
+          "text": "                      options={\"ftol\": 1e-12, \"maxiter\": 500})"
+        },
+        {
+          "number": "199",
+          "text": "    if not result.success:"
+        },
+        {
+          "number": "200",
+          "text": "        raise RuntimeError(f\"权重估计失败: {result.message}\")"
+        },
+        {
+          "number": "201",
+          "text": "    w = np.maximum(result.x, 0.0)"
+        },
+        {
+          "number": "202",
+          "text": "    w /= w.sum()"
+        },
+        {
+          "number": "203",
+          "text": "    return w, dict(n_days=len(target_days), n_samples=len(y), scale=scale,"
+        },
+        {
+          "number": "204",
+          "text": "                   objective=float(result.fun), iterations=int(result.nit), converg"
+        },
+        {
+          "number": "↪",
+          "text": "ed=True)"
+        }
+      ]
+    },
+    {
+      "name": "action",
+      "start": 303,
+      "end": 312,
+      "code": "def action(net, g, s, reference, margin=RESERVE_MARGIN):\n    gap = float(net - g)\n    reserve = max(SOC_MIN, float(reference) - margin)\n    if gap >= 0:\n        d = min(gap, SLOT_ENERGY_CAP, ETA_D * max(s - reserve, 0))\n        c, e, w = 0.0, max(gap - d, 0.0), 0.0\n    else:\n        c = min(-gap, SLOT_ENERGY_CAP, max((SOC_MAX - s) / ETA_C, 0))\n        d, e, w = 0.0, 0.0, max(-gap - c, 0.0)\n    return c, d, e, w, s + ETA_C * c - d / ETA_D",
+      "display": [
+        {
+          "number": "303",
+          "text": "def action(net, g, s, reference, margin=RESERVE_MARGIN):"
+        },
+        {
+          "number": "304",
+          "text": "    gap = float(net - g)"
+        },
+        {
+          "number": "305",
+          "text": "    reserve = max(SOC_MIN, float(reference) - margin)"
+        },
+        {
+          "number": "306",
+          "text": "    if gap >= 0:"
+        },
+        {
+          "number": "307",
+          "text": "        d = min(gap, SLOT_ENERGY_CAP, ETA_D * max(s - reserve, 0))"
+        },
+        {
+          "number": "308",
+          "text": "        c, e, w = 0.0, max(gap - d, 0.0), 0.0"
+        },
+        {
+          "number": "309",
+          "text": "    else:"
+        },
+        {
+          "number": "310",
+          "text": "        c = min(-gap, SLOT_ENERGY_CAP, max((SOC_MAX - s) / ETA_C, 0))"
+        },
+        {
+          "number": "311",
+          "text": "        d, e, w = 0.0, 0.0, max(-gap - c, 0.0)"
+        },
+        {
+          "number": "312",
+          "text": "    return c, d, e, w, s + ETA_C * c - d / ETA_D"
+        }
+      ]
+    }
+  ],
+  "q3/code/forecast_v5.py": [
+    {
+      "name": "fit",
+      "start": 34,
+      "end": 50,
+      "code": "def fit(X,y,prior,ridge,active=False):\n    X=np.asarray(X,float).reshape(-1,len(prior));y=np.asarray(y,float).ravel()\n    if active:\n        m=np.maximum(y,X.max(1))>1e-8;X=X[m];y=y[m]\n    if len(y)<2:return np.asarray(prior).copy()\n    resid=y-X@prior;scale=max(float(np.median(abs(resid-np.median(resid)))),1e-4)\n    def objective(w):\n        z=(y-X@w)/scale;az=abs(z)\n        loss=np.where(az<=1.345,.5*z*z,1.345*(az-.6725))\n        grad=-(X.T@np.clip(z,-1.345,1.345))/(len(y)*scale)+2*ridge*(w-prior)\n        return float(loss.mean()+ridge*np.sum((w-prior)**2)),grad\n    r=minimize(objective,prior,jac=True,method='SLSQP',bounds=[(0,1)]*len(prior),constraints={'type':'eq','fun':lambda w:w.sum()-1,'jac':lambda w:np.ones(len(w))},options={'ftol':1e-9,'maxiter':400})\n    if not r.success:\n        # 此问题为凸优化；退化情形以均匀点重启，失败显式报错。\n        r=minimize(objective,np.full(len(prior),1/len(prior)),jac=True,method='SLSQP',bounds=[(0,1)]*len(prior),constraints={'type':'eq','fun':lambda w:w.sum()-1},options={'ftol':1e-8,'maxiter':1000})\n    if not r.success:raise RuntimeError('权重优化失败 '+r.message)\n    w=np.maximum(r.x,0);return w/w.sum()",
+      "display": [
+        {
+          "number": "34",
+          "text": "def fit(X,y,prior,ridge,active=False):"
+        },
+        {
+          "number": "35",
+          "text": "    X=np.asarray(X,float).reshape(-1,len(prior));y=np.asarray(y,float).ravel()"
+        },
+        {
+          "number": "36",
+          "text": "    if active:"
+        },
+        {
+          "number": "37",
+          "text": "        m=np.maximum(y,X.max(1))>1e-8;X=X[m];y=y[m]"
+        },
+        {
+          "number": "38",
+          "text": "    if len(y)<2:return np.asarray(prior).copy()"
+        },
+        {
+          "number": "39",
+          "text": "    resid=y-X@prior;scale=max(float(np.median(abs(resid-np.median(resid)))),1e-4)"
+        },
+        {
+          "number": "40",
+          "text": "    def objective(w):"
+        },
+        {
+          "number": "41",
+          "text": "        z=(y-X@w)/scale;az=abs(z)"
+        },
+        {
+          "number": "42",
+          "text": "        loss=np.where(az<=1.345,.5*z*z,1.345*(az-.6725))"
+        },
+        {
+          "number": "43",
+          "text": "        grad=-(X.T@np.clip(z,-1.345,1.345))/(len(y)*scale)+2*ridge*(w-prior)"
+        },
+        {
+          "number": "44",
+          "text": "        return float(loss.mean()+ridge*np.sum((w-prior)**2)),grad"
+        },
+        {
+          "number": "45",
+          "text": "    r=minimize(objective,prior,jac=True,method='SLSQP',bounds=[(0,1)]*len(prior),co"
+        },
+        {
+          "number": "↪",
+          "text": "nstraints={'type':'eq','fun':lambda w:w.sum()-1,'jac':lambda w:np.ones(len(w))},opt"
+        },
+        {
+          "number": "↪",
+          "text": "ions={'ftol':1e-9,'maxiter':400})"
+        },
+        {
+          "number": "46",
+          "text": "    if not r.success:"
+        },
+        {
+          "number": "47",
+          "text": "        # 此问题为凸优化；退化情形以均匀点重启，失败显式报错。"
+        },
+        {
+          "number": "48",
+          "text": "        r=minimize(objective,np.full(len(prior),1/len(prior)),jac=True,method='SLSQ"
+        },
+        {
+          "number": "↪",
+          "text": "P',bounds=[(0,1)]*len(prior),constraints={'type':'eq','fun':lambda w:w.sum()-1},opt"
+        },
+        {
+          "number": "↪",
+          "text": "ions={'ftol':1e-8,'maxiter':1000})"
+        },
+        {
+          "number": "49",
+          "text": "    if not r.success:raise RuntimeError('权重优化失败 '+r.message)"
+        },
+        {
+          "number": "50",
+          "text": "    w=np.maximum(r.x,0);return w/w.sum()"
+        }
+      ]
+    },
+    {
+      "name": "fit_state",
+      "start": 63,
+      "end": 71,
+      "code": "def fit_state(data,raw,historical,d,prior,ridge,window):\n    state={k:np.array(v).copy() for k,v in prior.items()}\n    for key,series,lags,active,earliest in [('load',data.L,(7,14),False,14),('pv',data.V,(1,2,3),True,3)]:\n        X,y,_=samples(series,lambda k:np.column_stack([lag(series,k,l) for l in lags]),earliest,d,window)\n        if X is not None:state[key]=fit(X,y,prior[key],ridge,active)\n    for j,h in enumerate(HOURS):\n        X,y,_=samples(data.V,lambda k:np.column_stack([historical[k],*raw[k,:j+1]]),3,d,window,CUTS[j])\n        if X is not None:state[str(h)]=fit(X,y,prior[str(h)],ridge,True)\n    return state",
+      "display": [
+        {
+          "number": "63",
+          "text": "def fit_state(data,raw,historical,d,prior,ridge,window):"
+        },
+        {
+          "number": "64",
+          "text": "    state={k:np.array(v).copy() for k,v in prior.items()}"
+        },
+        {
+          "number": "65",
+          "text": "    for key,series,lags,active,earliest in [('load',data.L,(7,14),False,14),('pv',d"
+        },
+        {
+          "number": "↪",
+          "text": "ata.V,(1,2,3),True,3)]:"
+        },
+        {
+          "number": "66",
+          "text": "        X,y,_=samples(series,lambda k:np.column_stack([lag(series,k,l) for l in lag"
+        },
+        {
+          "number": "↪",
+          "text": "s]),earliest,d,window)"
+        },
+        {
+          "number": "67",
+          "text": "        if X is not None:state[key]=fit(X,y,prior[key],ridge,active)"
+        },
+        {
+          "number": "68",
+          "text": "    for j,h in enumerate(HOURS):"
+        },
+        {
+          "number": "69",
+          "text": "        X,y,_=samples(data.V,lambda k:np.column_stack([historical[k],*raw[k,:j+1]])"
+        },
+        {
+          "number": "↪",
+          "text": ",3,d,window,CUTS[j])"
+        },
+        {
+          "number": "70",
+          "text": "        if X is not None:state[str(h)]=fit(X,y,prior[str(h)],ridge,True)"
+        },
+        {
+          "number": "71",
+          "text": "    return state"
+        }
+      ]
+    },
+    {
+      "name": "one_day",
+      "start": 76,
+      "end": 95,
+      "code": "def one_day(data,d,state,raw=None,source='combo'):\n    raw=raw_curves(data,d) if raw is None else raw\n    lf=sum(w*lag(data.L,d,k) for w,k in zip(state['load'],(7,14)))\n    hist=sum(w*lag(data.V,d,k) for w,k in zip(state['pv'],(1,2,3)))\n    base=[]\n    for j,h in enumerate(HOURS):\n        if source=='latest':pv=raw[j]\n        elif source=='lag7':pv=raw[j];lf=lag(data.L,d,7)\n        else:pv=np.column_stack([hist,*raw[:j+1]])@state[str(h)]\n        base.append(pv)\n    net=np.zeros((4,4,T))\n    for hi,h in enumerate(HOURS):\n        for ji in range(hi+1):\n            # 所有消融组享有同样的当前已完成光伏观测；只改变新预报版本。\n            pv=base[ji].copy();ds=CUTS[hi];end=6*(h+1)-1\n            x0=-2 if hi==0 else ds-1\n            anchor=data.V[d-1,-2] if hi==0 else data.V[d,ds-1]\n            pv[ds:end+1]=np.interp(np.arange(ds,end+1),[x0,end],[anchor,pv[end]])\n            net[hi,ji]=lf-pv\n    return net,hist",
+      "display": [
+        {
+          "number": "76",
+          "text": "def one_day(data,d,state,raw=None,source='combo'):"
+        },
+        {
+          "number": "77",
+          "text": "    raw=raw_curves(data,d) if raw is None else raw"
+        },
+        {
+          "number": "78",
+          "text": "    lf=sum(w*lag(data.L,d,k) for w,k in zip(state['load'],(7,14)))"
+        },
+        {
+          "number": "79",
+          "text": "    hist=sum(w*lag(data.V,d,k) for w,k in zip(state['pv'],(1,2,3)))"
+        },
+        {
+          "number": "80",
+          "text": "    base=[]"
+        },
+        {
+          "number": "81",
+          "text": "    for j,h in enumerate(HOURS):"
+        },
+        {
+          "number": "82",
+          "text": "        if source=='latest':pv=raw[j]"
+        },
+        {
+          "number": "83",
+          "text": "        elif source=='lag7':pv=raw[j];lf=lag(data.L,d,7)"
+        },
+        {
+          "number": "84",
+          "text": "        else:pv=np.column_stack([hist,*raw[:j+1]])@state[str(h)]"
+        },
+        {
+          "number": "85",
+          "text": "        base.append(pv)"
+        },
+        {
+          "number": "86",
+          "text": "    net=np.zeros((4,4,T))"
+        },
+        {
+          "number": "87",
+          "text": "    for hi,h in enumerate(HOURS):"
+        },
+        {
+          "number": "88",
+          "text": "        for ji in range(hi+1):"
+        },
+        {
+          "number": "89",
+          "text": "            # 所有消融组享有同样的当前已完成光伏观测；只改变新预报版本。"
+        },
+        {
+          "number": "90",
+          "text": "            pv=base[ji].copy();ds=CUTS[hi];end=6*(h+1)-1"
+        },
+        {
+          "number": "91",
+          "text": "            x0=-2 if hi==0 else ds-1"
+        },
+        {
+          "number": "92",
+          "text": "            anchor=data.V[d-1,-2] if hi==0 else data.V[d,ds-1]"
+        },
+        {
+          "number": "93",
+          "text": "            pv[ds:end+1]=np.interp(np.arange(ds,end+1),[x0,end],[anchor,pv[end]])"
+        },
+        {
+          "number": "94",
+          "text": "            net[hi,ji]=lf-pv"
+        },
+        {
+          "number": "95",
+          "text": "    return net,hist"
+        }
+      ]
+    }
+  ],
+  "q3/code/dispatch_v5.py": [
+    {
+      "name": "Planner",
+      "start": 27,
+      "end": 53,
+      "code": "class Planner:\n    def __init__(self,p,target):self.p=p;self.target=target;self.count=0;self.residual=0.;self.gap=0.;self.cache={}\n    def matrices(self,start):\n        if start in self.cache:return self.cache[start]\n        n=T-start;rr=[];cc=[];vv=[]\n        for t in range(n):\n            for col,val in [(t,1),(n+t,-1),(2*n+t,1),(3*n+t,-1)]:rr.append(t);cc.append(col);vv.append(val)\n            for col,val in [(n+t,-ETA),(2*n+t,1/ETA),(4*n+t,1)]:rr.append(n+t);cc.append(col);vv.append(val)\n            if t:rr.append(n+t);cc.append(4*n+t-1);vv.append(-1)\n        A=coo_matrix((vv,(rr,cc)),shape=(2*n,6*n)).tocsr();ur=[];uc=[];uv=[]\n        for t,p in enumerate(self.p[start:]):\n            for row,f in [(t,.5),(n+t,1.5)]:ur.extend([row,row]);uc.extend([t,5*n+t]);uv.extend([f*p,-1])\n        U=coo_matrix((uv,(ur,uc)),shape=(2*n,6*n)).tocsr()\n        bounds=[(0,None)]*n+[(0,CAP)]*(2*n)+[(0,None)]*n+[(LO,HI)]*n+[(0,None)]*n\n        bounds[5*n-1]=(self.target,self.target);self.cache[start]=(A,U,bounds);return self.cache[start]\n    def solve(self,net,state,start=0,original=None):\n        n=T-start;A,U,bounds=self.matrices(start);rhs=np.r_[net,np.zeros(n)];rhs[n]=state\n        cost=np.r_[self.p[start:],np.zeros(5*n)] if original is None else np.r_[np.zeros(5*n),np.ones(n)]\n        ub=None if original is None else np.r_[-.5*self.p[start:]*original,.5*self.p[start:]*original]\n        uu=None if original is None else U\n        r=linprog(cost,A_eq=A,b_eq=rhs,A_ub=uu,b_ub=ub,bounds=bounds,method='highs')\n        if not r.success:raise RuntimeError(r.message)\n        self.count+=1;self.residual=max(self.residual,float(abs(A@r.x-rhs).max()),0 if ub is None else float(np.maximum(U@r.x-ub,0).max()))\n        dual=rhs@r.eqlin.marginals+np.array([a for a,b in bounds])@r.lower.marginals+np.array([b or 0 for a,b in bounds])@r.upper.marginals\n        if ub is not None:dual+=ub@r.ineqlin.marginals\n        self.gap=max(self.gap,float(abs(r.fun-dual)))\n        x=r.x.reshape(6,n);return np.maximum(x[0],0),x[4].copy()",
+      "display": [
+        {
+          "number": "27",
+          "text": "class Planner:"
+        },
+        {
+          "number": "28",
+          "text": "    def __init__(self,p,target):self.p=p;self.target=target;self.count=0;self.resid"
+        },
+        {
+          "number": "↪",
+          "text": "ual=0.;self.gap=0.;self.cache={}"
+        },
+        {
+          "number": "29",
+          "text": "    def matrices(self,start):"
+        },
+        {
+          "number": "30",
+          "text": "        if start in self.cache:return self.cache[start]"
+        },
+        {
+          "number": "31",
+          "text": "        n=T-start;rr=[];cc=[];vv=[]"
+        },
+        {
+          "number": "32",
+          "text": "        for t in range(n):"
+        },
+        {
+          "number": "33",
+          "text": "            for col,val in [(t,1),(n+t,-1),(2*n+t,1),(3*n+t,-1)]:rr.append(t);cc.ap"
+        },
+        {
+          "number": "↪",
+          "text": "pend(col);vv.append(val)"
+        },
+        {
+          "number": "34",
+          "text": "            for col,val in [(n+t,-ETA),(2*n+t,1/ETA),(4*n+t,1)]:rr.append(n+t);cc.a"
+        },
+        {
+          "number": "↪",
+          "text": "ppend(col);vv.append(val)"
+        },
+        {
+          "number": "35",
+          "text": "            if t:rr.append(n+t);cc.append(4*n+t-1);vv.append(-1)"
+        },
+        {
+          "number": "36",
+          "text": "        A=coo_matrix((vv,(rr,cc)),shape=(2*n,6*n)).tocsr();ur=[];uc=[];uv=[]"
+        },
+        {
+          "number": "37",
+          "text": "        for t,p in enumerate(self.p[start:]):"
+        },
+        {
+          "number": "38",
+          "text": "            for row,f in [(t,.5),(n+t,1.5)]:ur.extend([row,row]);uc.extend([t,5*n+t"
+        },
+        {
+          "number": "↪",
+          "text": "]);uv.extend([f*p,-1])"
+        },
+        {
+          "number": "39",
+          "text": "        U=coo_matrix((uv,(ur,uc)),shape=(2*n,6*n)).tocsr()"
+        },
+        {
+          "number": "40",
+          "text": "        bounds=[(0,None)]*n+[(0,CAP)]*(2*n)+[(0,None)]*n+[(LO,HI)]*n+[(0,None)]*n"
+        },
+        {
+          "number": "41",
+          "text": "        bounds[5*n-1]=(self.target,self.target);self.cache[start]=(A,U,bounds);retu"
+        },
+        {
+          "number": "↪",
+          "text": "rn self.cache[start]"
+        },
+        {
+          "number": "42",
+          "text": "    def solve(self,net,state,start=0,original=None):"
+        },
+        {
+          "number": "43",
+          "text": "        n=T-start;A,U,bounds=self.matrices(start);rhs=np.r_[net,np.zeros(n)];rhs[n]"
+        },
+        {
+          "number": "↪",
+          "text": "=state"
+        },
+        {
+          "number": "44",
+          "text": "        cost=np.r_[self.p[start:],np.zeros(5*n)] if original is None else np.r_[np."
+        },
+        {
+          "number": "↪",
+          "text": "zeros(5*n),np.ones(n)]"
+        },
+        {
+          "number": "45",
+          "text": "        ub=None if original is None else np.r_[-.5*self.p[start:]*original,.5*self."
+        },
+        {
+          "number": "↪",
+          "text": "p[start:]*original]"
+        },
+        {
+          "number": "46",
+          "text": "        uu=None if original is None else U"
+        },
+        {
+          "number": "47",
+          "text": "        r=linprog(cost,A_eq=A,b_eq=rhs,A_ub=uu,b_ub=ub,bounds=bounds,method='highs'"
+        },
+        {
+          "number": "↪",
+          "text": ")"
+        },
+        {
+          "number": "48",
+          "text": "        if not r.success:raise RuntimeError(r.message)"
+        },
+        {
+          "number": "49",
+          "text": "        self.count+=1;self.residual=max(self.residual,float(abs(A@r.x-rhs).max()),0"
+        },
+        {
+          "number": "↪",
+          "text": " if ub is None else float(np.maximum(U@r.x-ub,0).max()))"
+        },
+        {
+          "number": "50",
+          "text": "        dual=rhs@r.eqlin.marginals+np.array([a for a,b in bounds])@r.lower.marginal"
+        },
+        {
+          "number": "↪",
+          "text": "s+np.array([b or 0 for a,b in bounds])@r.upper.marginals"
+        },
+        {
+          "number": "51",
+          "text": "        if ub is not None:dual+=ub@r.ineqlin.marginals"
+        },
+        {
+          "number": "52",
+          "text": "        self.gap=max(self.gap,float(abs(r.fun-dual)))"
+        },
+        {
+          "number": "53",
+          "text": "        x=r.x.reshape(6,n);return np.maximum(x[0],0),x[4].copy()"
+        }
+      ]
+    },
+    {
+      "name": "action",
+      "start": 55,
+      "end": 59,
+      "code": "def action(net,q,state,ref=LO,margin=9600):\n    gap=net-q;floor=max(LO,float(ref)-margin)\n    b=min(max(gap,0),CAP,ETA*max(state-floor,0));a=min(max(-gap,0),CAP,max((HI-state)/ETA,0))\n    e=max(gap-b,0);w=max(-gap-a,0)\n    return a,b,e,w,state+ETA*a-b/ETA",
+      "display": [
+        {
+          "number": "55",
+          "text": "def action(net,q,state,ref=LO,margin=9600):"
+        },
+        {
+          "number": "56",
+          "text": "    gap=net-q;floor=max(LO,float(ref)-margin)"
+        },
+        {
+          "number": "57",
+          "text": "    b=min(max(gap,0),CAP,ETA*max(state-floor,0));a=min(max(-gap,0),CAP,max((HI-stat"
+        },
+        {
+          "number": "↪",
+          "text": "e)/ETA,0))"
+        },
+        {
+          "number": "58",
+          "text": "    e=max(gap-b,0);w=max(-gap-a,0)"
+        },
+        {
+          "number": "59",
+          "text": "    return a,b,e,w,state+ETA*a-b/ETA"
+        }
+      ]
+    }
+  ],
+  "q4/code/dispatch.py": [
+    {
+      "name": "weighted_quantile",
+      "start": 103,
+      "end": 107,
+      "code": "def weighted_quantile(values,weights,alpha):\n    if not len(values):return np.zeros(values.shape[-1])\n    order=np.argsort(values,axis=0);x=np.take_along_axis(values,order,axis=0);w=np.take_along_axis(weights,order,axis=0)\n    cum=np.cumsum(w,axis=0);idx=np.argmax(cum>=alpha*cum[-1],axis=0)\n    return x[idx,np.arange(x.shape[1])]",
+      "display": [
+        {
+          "number": "103",
+          "text": "def weighted_quantile(values,weights,alpha):"
+        },
+        {
+          "number": "104",
+          "text": "    if not len(values):return np.zeros(values.shape[-1])"
+        },
+        {
+          "number": "105",
+          "text": "    order=np.argsort(values,axis=0);x=np.take_along_axis(values,order,axis=0);w=np."
+        },
+        {
+          "number": "↪",
+          "text": "take_along_axis(weights,order,axis=0)"
+        },
+        {
+          "number": "106",
+          "text": "    cum=np.cumsum(w,axis=0);idx=np.argmax(cum>=alpha*cum[-1],axis=0)"
+        },
+        {
+          "number": "107",
+          "text": "    return x[idx,np.arange(x.shape[1])]"
+        }
+      ]
+    },
+    {
+      "name": "paths",
+      "start": 109,
+      "end": 118,
+      "code": "def paths(data,fc,pf,d,hi,used,point,pred,cfg):\n    last=d-2 if hi==0 else d-1\n    idx=np.arange(max(14,last-cfg.window+1),last+1)\n    if not len(idx):return np.zeros((0,T)),np.zeros((0,T)),idx\n    ref=fc['historical'][idx] if cfg.source=='history' else fc['net'][idx,hi,used]\n    errors=data.net[idx]-ref\n    prices=np.maximum(pred[None,:]+data.P[idx]-pf[idx,hi],MIN_PRICE)\n    if cfg.pricing=='fixed':prices=np.tile(data.baseP,(len(idx),1))\n    if cfg.pricing=='oracle':prices=np.tile(data.P[d],(len(idx),1))\n    return errors,prices,idx",
+      "display": [
+        {
+          "number": "109",
+          "text": "def paths(data,fc,pf,d,hi,used,point,pred,cfg):"
+        },
+        {
+          "number": "110",
+          "text": "    last=d-2 if hi==0 else d-1"
+        },
+        {
+          "number": "111",
+          "text": "    idx=np.arange(max(14,last-cfg.window+1),last+1)"
+        },
+        {
+          "number": "112",
+          "text": "    if not len(idx):return np.zeros((0,T)),np.zeros((0,T)),idx"
+        },
+        {
+          "number": "113",
+          "text": "    ref=fc['historical'][idx] if cfg.source=='history' else fc['net'][idx,hi,used]"
+        },
+        {
+          "number": "114",
+          "text": "    errors=data.net[idx]-ref"
+        },
+        {
+          "number": "115",
+          "text": "    prices=np.maximum(pred[None,:]+data.P[idx]-pf[idx,hi],MIN_PRICE)"
+        },
+        {
+          "number": "116",
+          "text": "    if cfg.pricing=='fixed':prices=np.tile(data.baseP,(len(idx),1))"
+        },
+        {
+          "number": "117",
+          "text": "    if cfg.pricing=='oracle':prices=np.tile(data.P[d],(len(idx),1))"
+        },
+        {
+          "number": "118",
+          "text": "    return errors,prices,idx"
+        }
+      ]
+    },
+    {
+      "name": "score",
+      "start": 120,
+      "end": 130,
+      "code": "def score(q,point,errors,prices,state,start,original,value,independent=False):\n    nets=point[None,start:]+errors[:,start:];pr=prices[:,start:]\n    states=np.full(len(errors),state);em=np.zeros(len(errors));meanp=pr.mean(0)\n    for k,t in enumerate(range(start,T)):\n        gap=nets[:,k]-q[k]\n        a=np.minimum(np.minimum(np.maximum(-gap,0),CAP),np.maximum((HI-states)/ETA,0))\n        b=np.minimum(np.minimum(np.maximum(gap,0),CAP),ETA*np.maximum(states-LO,0))\n        states+=ETA*a-b/ETA\n        emergency=np.maximum(gap-b,0)\n        em+=5*(meanp[k] if independent else pr[:,k])*emergency\n    return float(meanp@contract_units(q,original)+np.mean(em-value*(states-state)))",
+      "display": [
+        {
+          "number": "120",
+          "text": "def score(q,point,errors,prices,state,start,original,value,independent=False):"
+        },
+        {
+          "number": "121",
+          "text": "    nets=point[None,start:]+errors[:,start:];pr=prices[:,start:]"
+        },
+        {
+          "number": "122",
+          "text": "    states=np.full(len(errors),state);em=np.zeros(len(errors));meanp=pr.mean(0)"
+        },
+        {
+          "number": "123",
+          "text": "    for k,t in enumerate(range(start,T)):"
+        },
+        {
+          "number": "124",
+          "text": "        gap=nets[:,k]-q[k]"
+        },
+        {
+          "number": "125",
+          "text": "        a=np.minimum(np.minimum(np.maximum(-gap,0),CAP),np.maximum((HI-states)/ETA,"
+        },
+        {
+          "number": "↪",
+          "text": "0))"
+        },
+        {
+          "number": "126",
+          "text": "        b=np.minimum(np.minimum(np.maximum(gap,0),CAP),ETA*np.maximum(states-LO,0))"
+        },
+        {
+          "number": "127",
+          "text": "        states+=ETA*a-b/ETA"
+        },
+        {
+          "number": "128",
+          "text": "        emergency=np.maximum(gap-b,0)"
+        },
+        {
+          "number": "129",
+          "text": "        em+=5*(meanp[k] if independent else pr[:,k])*emergency"
+        },
+        {
+          "number": "130",
+          "text": "    return float(meanp@contract_units(q,original)+np.mean(em-value*(states-state)))"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "start": 132,
+      "end": 154,
+      "code": "def select(planner,point,errors,prices,pred,state,start,original,current,cfg):\n    alpha=.8 if start==0 else .7\n    if cfg.rule in ['point','quantile','weighted'] or not len(errors):\n        correction=np.zeros(T)\n        if len(errors) and cfg.rule!='point':\n            correction=weighted_quantile(errors,prices if cfg.rule=='weighted' else np.ones_like(prices),alpha)\n        q,E,a,b=planner.solve((point+correction)[start:],pred[start:],state,start,original)\n        return q,E,f'{cfg.rule}:{alpha}',0.\n    independent=cfg.rule=='independent'\n    cand=[];value=cfg.value_scale*pred[-1]/ETA\n    # Same feasible candidates for joint vs independent scores except weighting;\n    # include both uniform and price-weighted curves to isolate ranking effects.\n    for alpha in [.5,.7,.8,.9]:\n        for weighting in ['plain','weighted']:\n            correction=weighted_quantile(errors,prices if weighting=='weighted' else np.ones_like(prices),alpha)\n            q,E,a,b=planner.solve((point+correction)[start:],pred[start:],state,start,original)\n            val=score(q,point,errors,prices,state,start,original,value,independent)\n            cand.append((val,q,E,f'{weighting}:{alpha}'))\n    if current is not None:\n        val=score(current,point,errors,prices,state,start,original,value,independent)\n        cand.append((val,current.copy(),np.full(T-start,state),'keep'))\n    best=min(cand,key=lambda c:c[0])\n    return best[1],best[2],best[3],best[0]",
+      "display": [
+        {
+          "number": "132",
+          "text": "def select(planner,point,errors,prices,pred,state,start,original,current,cfg):"
+        },
+        {
+          "number": "133",
+          "text": "    alpha=.8 if start==0 else .7"
+        },
+        {
+          "number": "134",
+          "text": "    if cfg.rule in ['point','quantile','weighted'] or not len(errors):"
+        },
+        {
+          "number": "135",
+          "text": "        correction=np.zeros(T)"
+        },
+        {
+          "number": "136",
+          "text": "        if len(errors) and cfg.rule!='point':"
+        },
+        {
+          "number": "137",
+          "text": "            correction=weighted_quantile(errors,prices if cfg.rule=='weighted' else"
+        },
+        {
+          "number": "↪",
+          "text": " np.ones_like(prices),alpha)"
+        },
+        {
+          "number": "138",
+          "text": "        q,E,a,b=planner.solve((point+correction)[start:],pred[start:],state,start,o"
+        },
+        {
+          "number": "↪",
+          "text": "riginal)"
+        },
+        {
+          "number": "139",
+          "text": "        return q,E,f'{cfg.rule}:{alpha}',0."
+        },
+        {
+          "number": "140",
+          "text": "    independent=cfg.rule=='independent'"
+        },
+        {
+          "number": "141",
+          "text": "    cand=[];value=cfg.value_scale*pred[-1]/ETA"
+        },
+        {
+          "number": "142",
+          "text": "    # Same feasible candidates for joint vs independent scores except weighting;"
+        },
+        {
+          "number": "143",
+          "text": "    # include both uniform and price-weighted curves to isolate ranking effects."
+        },
+        {
+          "number": "144",
+          "text": "    for alpha in [.5,.7,.8,.9]:"
+        },
+        {
+          "number": "145",
+          "text": "        for weighting in ['plain','weighted']:"
+        },
+        {
+          "number": "146",
+          "text": "            correction=weighted_quantile(errors,prices if weighting=='weighted' els"
+        },
+        {
+          "number": "↪",
+          "text": "e np.ones_like(prices),alpha)"
+        },
+        {
+          "number": "147",
+          "text": "            q,E,a,b=planner.solve((point+correction)[start:],pred[start:],state,sta"
+        },
+        {
+          "number": "↪",
+          "text": "rt,original)"
+        },
+        {
+          "number": "148",
+          "text": "            val=score(q,point,errors,prices,state,start,original,value,independent)"
+        },
+        {
+          "number": "149",
+          "text": "            cand.append((val,q,E,f'{weighting}:{alpha}'))"
+        },
+        {
+          "number": "150",
+          "text": "    if current is not None:"
+        },
+        {
+          "number": "151",
+          "text": "        val=score(current,point,errors,prices,state,start,original,value,independen"
+        },
+        {
+          "number": "↪",
+          "text": "t)"
+        },
+        {
+          "number": "152",
+          "text": "        cand.append((val,current.copy(),np.full(T-start,state),'keep'))"
+        },
+        {
+          "number": "153",
+          "text": "    best=min(cand,key=lambda c:c[0])"
+        },
+        {
+          "number": "154",
+          "text": "    return best[1],best[2],best[3],best[0]"
+        }
+      ]
+    }
+  ]
+}
